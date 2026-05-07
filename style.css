@@ -304,6 +304,35 @@ p {
   font-size: 0.95rem;
 }
 
+/* ---------------------------------------------------------------------
+   Typewriter animation styling
+
+   The homepage contains a small typewriter animation that cycles through
+   different job titles (e.g. "Développeur web" and "Développeur d'applications").
+   This CSS defines the layout for the text and the blinking cursor.
+------------------------------------------------------------------------*/
+.typewriter {
+  /* Ensure the typewriter text occupies the full line. Using block layout
+     allows the text to wrap naturally if it exceeds the column width. */
+  display: block;
+}
+
+.typewriter .cursor {
+  font-weight: 800;
+  margin-left: 0.2rem;
+  color: var(--primary);
+  animation: blinkCursor 1.1s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
 .section-heading {
   margin-bottom: 2rem;
 }
