@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Profil de Fahran Gérondal, développeur orienté backend, sécurité, qualité logicielle et conception applicative." />
   <title>Profil | Fahran Gérondal</title>
   <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="animated-bg" aria-hidden="true"></div>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <a class="brand" href="index.html">FG<span>.</span></a>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
     <nav class="main-nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <a class="active" href="profil.html">Profil</a>
@@ -23,7 +32,7 @@
   </header>
 
   <main class="page-shell reveal">
-    <section class="section-heading">
+    <section class="section-heading" data-reveal>
       <p class="eyebrow">Profil</p>
       <h1>Un développeur qui pense architecture, sécurité et maintenabilité.</h1>
       <p>
@@ -32,17 +41,40 @@
     </section>
 
     <section class="grid two-cols">
-      <article class="glass-card content-card">
+      <article class="glass-card content-card tilt-card" data-reveal>
+        <span class="card-kicker">Méthode</span>
         <h2>Ce que j'apporte</h2>
         <p>
-          Une vision pragmatique du développement : comprendre le besoin, choisir une architecture lisible, sécuriser les entrées, structurer les données et livrer un code exploitable. Je travaille avec une logique défensive, en gardant en tête les risques OWASP, les tests et la maintenance.
+          Une vision pragmatique du développement : comprendre le besoin, choisir une architecture lisible, sécuriser les entrées, structurer les données et livrer un code exploitable.
         </p>
       </article>
-      <article class="glass-card content-card">
-        <h2>Mon positionnement</h2>
+
+      <article class="glass-card content-card tilt-card" data-reveal>
+        <span class="card-kicker">Positionnement</span>
+        <h2>Full stack, avec un vrai tropisme backend</h2>
         <p>
-          Full stack avec un vrai tropisme backend et applicatif. Je peux intervenir sur une API Node.js, une application WPF, une interface EJS, une base PostgreSQL ou MariaDB, un environnement Docker, ou une application C++ avec Qt. Bref, pas juste déplacer des divs comme si l'humanité n'avait pas déjà assez souffert.
+          Je peux intervenir sur une API Node.js, une application WPF, une interface EJS, une base PostgreSQL ou MariaDB, un environnement Docker, ou une application C++ avec Qt.
         </p>
+      </article>
+    </section>
+
+    <section class="value-grid" aria-label="Axes de travail">
+      <article class="value-card" data-reveal>
+        <strong>01</strong>
+        <h2>Code défensif</h2>
+        <p>Validation des entrées, gestion propre des erreurs, droits d'accès et logique claire. Le minimum vital, bizarrement encore optionnel dans trop de projets.</p>
+      </article>
+
+      <article class="value-card" data-reveal>
+        <strong>02</strong>
+        <h2>Architecture lisible</h2>
+        <p>Des dossiers cohérents, des responsabilités séparées, des services compréhensibles et un code qui ne donne pas envie de fermer le PC.</p>
+      </article>
+
+      <article class="value-card" data-reveal>
+        <strong>03</strong>
+        <h2>Qualité logicielle</h2>
+        <p>Une logique issue du test logiciel : cas d'usage, anomalies, couverture, critères d'acceptation et maintenabilité.</p>
       </article>
     </section>
   </main>

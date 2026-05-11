@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projets de Fahran Gérondal : backend web, applications desktop, outils internes, accessibilité numérique et bases de données." />
   <title>Projets | Fahran Gérondal</title>
   <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="animated-bg" aria-hidden="true"></div>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <a class="brand" href="index.html">FG<span>.</span></a>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
     <nav class="main-nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <a href="profil.html">Profil</a>
@@ -23,39 +32,80 @@
   </header>
 
   <main class="page-shell reveal">
-    <section class="section-heading">
+    <section class="section-heading" data-reveal>
       <p class="eyebrow">Réalisations</p>
       <h1>Des projets concrets, pas une collection de mots-clés décoratifs.</h1>
-      <p>Chaque projet montre une partie différente de mon profil : backend, desktop, base de données, sécurité, conception ou accessibilité numérique.</p>
+      <p>
+        Chaque projet montre une partie différente de mon profil : backend, desktop, base de données, sécurité, conception ou accessibilité numérique.
+      </p>
     </section>
 
-    <section class="project-grid">
-      <article class="project-card glass-card">
+    <section class="filter-bar" aria-label="Filtrer les projets" data-reveal>
+      <button class="filter-btn active" type="button" data-filter="all">Tous</button>
+      <button class="filter-btn" type="button" data-filter="backend">Backend</button>
+      <button class="filter-btn" type="button" data-filter="desktop">Desktop</button>
+      <button class="filter-btn" type="button" data-filter="accessibilite">Accessibilité</button>
+      <button class="filter-btn" type="button" data-filter="database">Base de données</button>
+    </section>
+
+    <section class="project-grid" aria-live="polite">
+      <article class="project-card glass-card tilt-card" data-project-card data-category="backend database" data-reveal>
         <span class="project-type">Backend web</span>
         <h2>Zegailde</h2>
-        <p>Développement backend du site de Sébastien, avec une logique de contenu évolutif et une architecture pensée pour rester maintenable.</p>
-        <div class="tags"><span>TypeScript</span><span>Node.js</span><span>Sequelize</span><span>PostgreSQL</span><span>Docker</span><span>EJS</span></div>
+        <p>
+          Développement backend du site de Sébastien, avec une logique de contenu évolutif et une architecture pensée pour rester maintenable.
+        </p>
+        <div class="tags">
+          <span>TypeScript</span>
+          <span>Node.js</span>
+          <span>Sequelize</span>
+          <span>PostgreSQL</span>
+          <span>Docker</span>
+          <span>EJS</span>
+        </div>
       </article>
 
-      <article class="project-card glass-card">
+      <article class="project-card glass-card tilt-card" data-project-card data-category="desktop accessibilite" data-reveal>
         <span class="project-type">Desktop accessibilité</span>
         <h2>Traitement de texte simplifié</h2>
-        <p>Application WPF destinée aux personnes éloignées du numérique, avec une interface claire et des fonctionnalités centrées sur l'usage réel.</p>
-        <div class="tags"><span>C#</span><span>WPF</span><span>UX simple</span><span>Accessibilité</span></div>
+        <p>
+          Application WPF destinée aux personnes éloignées du numérique, avec une interface claire et des fonctionnalités centrées sur l'usage réel.
+        </p>
+        <div class="tags">
+          <span>C#</span>
+          <span>WPF</span>
+          <span>UX simple</span>
+          <span>Accessibilité</span>
+        </div>
       </article>
 
-      <article class="project-card glass-card">
+      <article class="project-card glass-card tilt-card" data-project-card data-category="desktop database" data-reveal>
         <span class="project-type">Application métier</span>
         <h2>Maison médicale</h2>
-        <p>Projet applicatif en C++ avec Qt Creator et PostgreSQL, orienté gestion de données métier et interface desktop structurée.</p>
-        <div class="tags"><span>C++</span><span>Qt Creator</span><span>PostgreSQL</span><span>Desktop</span></div>
+        <p>
+          Projet applicatif en C++ avec Qt Creator et PostgreSQL, orienté gestion de données métier et interface desktop structurée.
+        </p>
+        <div class="tags">
+          <span>C++</span>
+          <span>Qt Creator</span>
+          <span>PostgreSQL</span>
+          <span>Desktop</span>
+        </div>
       </article>
 
-      <article class="project-card glass-card">
+      <article class="project-card glass-card tilt-card" data-project-card data-category="backend database" data-reveal>
         <span class="project-type">Outil interne</span>
         <h2>CVthèque interne GRETA GRAND HAINAUT</h2>
-        <p>Outil de gestion interne permettant de centraliser et consulter des profils, avec une base de données MariaDB et un environnement Docker.</p>
-        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MariaDB</span><span>Docker</span></div>
+        <p>
+          Outil de gestion interne permettant de centraliser et consulter des profils, avec une base de données MariaDB et un environnement Docker.
+        </p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>MariaDB</span>
+          <span>Docker</span>
+        </div>
       </article>
     </section>
   </main>

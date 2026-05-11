@@ -9,10 +9,18 @@
   <script src="main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="animated-bg" aria-hidden="true"></div>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <a class="brand" href="index.html" aria-label="Retour à l'accueil">FG<span>.</span></a>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
     <nav class="main-nav" aria-label="Navigation principale">
       <a class="active" href="index.html">Accueil</a>
       <a href="profil.html">Profil</a>
@@ -24,26 +32,59 @@
   </header>
 
   <main class="page-shell hero-layout reveal">
-    <section class="hero-content">
-      <p class="eyebrow typewriter"><span id="typewriter-text"></span><span class="cursor">|</span></p>
-      <h1>Je conçois des applications propres, sécurisées et maintenables.</h1>
-      <p class="hero-text">
-        Backend Node.js / TypeScript, interfaces web, bases de données, tests logiciel, sécurité applicative et conception. Mon objectif : construire des solutions utiles, solides et compréhensibles par les équipes qui devront les maintenir après moi, parce que le chaos technique coûte toujours plus cher que prévu.
+    <section class="hero-content" data-reveal>
+      <p class="eyebrow typewriter" aria-label="Spécialités">
+        <span id="typewriter-text"></span><span class="cursor" aria-hidden="true">|</span>
       </p>
+
+      <h1>Je conçois des applications propres, sécurisées et maintenables.</h1>
+
+      <p class="hero-text">
+        Backend Node.js / TypeScript, interfaces web, bases de données, tests logiciel, sécurité applicative et conception. Mon objectif : construire des solutions utiles, solides et compréhensibles par les équipes qui devront les maintenir après moi.
+      </p>
+
       <div class="hero-actions">
-        <a class="btn primary" href="projets.html">Voir mes projets</a>
-        <a class="btn ghost" href="contact.html">Me contacter</a>
+        <a class="btn primary magnetic" href="projets.html">Voir mes projets</a>
+        <a class="btn ghost magnetic" href="contact.html">Me contacter</a>
       </div>
+
+      <section class="stats-grid" aria-label="Résumé chiffré">
+        <article class="stat-card" data-reveal>
+          <strong data-counter="3">0</strong>
+          <span>certifications ISTQB</span>
+        </article>
+
+        <article class="stat-card" data-reveal>
+          <strong data-counter="4">0</strong>
+          <span>projets présentés</span>
+        </article>
+
+        <article class="stat-card" data-reveal>
+          <strong data-counter="7">0</strong>
+          <span>technos principales</span>
+        </article>
+      </section>
     </section>
 
-    <aside class="hero-card glass-card" aria-label="Résumé professionnel">
+    <aside class="hero-card glass-card tilt-card" aria-label="Résumé professionnel" data-reveal>
       <div class="status-dot">Disponible pour opportunités</div>
+
       <h2>Fahran Gérondal</h2>
       <p>Développeur orienté qualité, sécurité, backend et conception applicative.</p>
+
       <ul class="quick-list">
-        <li><strong>Stack forte</strong><span>Node.js, TypeScript, Express, Sequelize</span></li>
-        <li><strong>Applicatif</strong><span>C#, WPF, C++, Qt Creator</span></li>
-        <li><strong>Qualité</strong><span>3 certifications ISTQB</span></li>
+        <li>
+          <strong>Stack forte</strong>
+          <span>Node.js, TypeScript, Express, Sequelize</span>
+        </li>
+        <li>
+          <strong>Applicatif</strong>
+          <span>C#, WPF, C++, Qt Creator</span>
+        </li>
+        <li>
+          <strong>Qualité</strong>
+          <span>3 certifications ISTQB</span>
+        </li>
       </ul>
     </aside>
   </main>

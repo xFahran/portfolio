@@ -49,6 +49,18 @@ body::before {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 82%);
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
 .animated-bg {
   position: fixed;
   inset: 0;
@@ -97,6 +109,13 @@ body::before {
   background: rgba(7, 9, 20, 0.72);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.site-header.is-scrolled {
+  border-color: rgba(109, 232, 255, 0.28);
+  background: rgba(7, 9, 20, 0.86);
+  transform: translateY(0.35rem);
 }
 
 .brand {
@@ -135,6 +154,8 @@ body::before {
 
 .nav-toggle {
   display: none;
+  place-items: center;
+  position: relative;
   width: 2.5rem;
   height: 2.5rem;
   color: var(--text);
@@ -142,6 +163,35 @@ body::before {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
+}
+
+.nav-toggle span {
+  position: absolute;
+  width: 1.05rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle span:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.nav-toggle span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .page-shell {
@@ -205,6 +255,36 @@ p {
   margin-top: 2rem;
 }
 
+.stats-grid,
+.cert-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.stat-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  line-height: 1;
+}
+
+.stat-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -239,6 +319,30 @@ p {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
   box-shadow: var(--shadow);
   backdrop-filter: blur(22px);
+}
+
+[data-reveal],
+.glass-card,
+.skill-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms ease var(--reveal-delay, 0ms),
+    transform 520ms ease var(--reveal-delay, 0ms),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+[data-reveal].is-visible,
+.glass-card.is-visible,
+.skill-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .hero-card {
@@ -304,17 +408,9 @@ p {
   font-size: 0.95rem;
 }
 
-/* ---------------------------------------------------------------------
-   Typewriter animation styling
-
-   The homepage contains a small typewriter animation that cycles through
-   different job titles (e.g. "Développeur web" and "Développeur d'applications").
-   This CSS defines the layout for the text and the blinking cursor.
-------------------------------------------------------------------------*/
 .typewriter {
-  /* Ensure the typewriter text occupies the full line. Using block layout
-     allows the text to wrap naturally if it exceeds the column width. */
   display: block;
+  min-height: 1.2rem;
 }
 
 .typewriter .cursor {
@@ -325,10 +421,13 @@ p {
 }
 
 @keyframes blinkCursor {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+
+  51%,
+  100% {
     opacity: 0;
   }
 }
@@ -356,6 +455,72 @@ p {
   padding: 1.6rem;
 }
 
+.card-kicker {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.value-card {
+  padding: 1.4rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(109, 232, 255, 0.45);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.value-card strong {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+  min-height: 2.6rem;
+  padding: 0 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.07);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--text);
+  border-color: rgba(109, 232, 255, 0.45);
+  background: rgba(109, 232, 255, 0.13);
+  transform: translateY(-2px);
+}
+
 .project-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -369,6 +534,11 @@ p {
   transform: translateY(-8px);
   border-color: rgba(109, 232, 255, 0.45);
   background: linear-gradient(145deg, rgba(109, 232, 255, 0.14), rgba(255, 255, 255, 0.05));
+}
+
+.project-card[hidden],
+.skill-card[hidden] {
+  display: none;
 }
 
 .project-type,
@@ -397,6 +567,46 @@ p {
   background: rgba(255, 255, 255, 0.07);
   font-size: 0.85rem;
   font-weight: 700;
+}
+
+.stack-toolbar {
+  margin-bottom: 1.3rem;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.stack-search {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  font: inherit;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.stack-search::placeholder {
+  color: rgba(170, 179, 197, 0.7);
+}
+
+.stack-search:focus {
+  border-color: rgba(109, 232, 255, 0.55);
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 0 0 4px rgba(109, 232, 255, 0.08);
+}
+
+.search-feedback {
+  min-height: 1.5rem;
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
 }
 
 .stack-grid {
@@ -490,6 +700,37 @@ p {
   text-decoration: underline;
 }
 
+.copy-btn {
+  width: 100%;
+  margin: 0 0 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 80;
+  max-width: min(360px, calc(100% - 2rem));
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  background: rgba(7, 9, 20, 0.92);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .reveal {
   animation: pageReveal 560ms ease both;
 }
@@ -498,6 +739,7 @@ p {
   from {
     transform: translate3d(0, 0, 0) scale(1);
   }
+
   to {
     transform: translate3d(3rem, -2rem, 0) scale(1.08);
   }
@@ -508,6 +750,7 @@ p {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -522,6 +765,13 @@ p {
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
+  }
+
+  [data-reveal],
+  .glass-card,
+  .skill-card {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -566,6 +816,12 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .stats-grid,
+  .cert-summary,
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero-layout {
     min-height: auto;
   }
@@ -591,5 +847,19 @@ p {
   .contact-card,
   .hero-card {
     padding: 1.2rem;
+  }
+
+  .filter-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .filter-btn {
+    width: 100%;
+  }
+
+  .toast {
+    right: 0.5rem;
+    bottom: 0.5rem;
   }
 }

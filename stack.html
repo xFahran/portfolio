@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stack technique de Fahran Gérondal : TypeScript, Node.js, Express, Sequelize, PostgreSQL, C#, WPF, C++, Qt, Docker, Git et tests logiciel." />
   <title>Stack | Fahran Gérondal</title>
   <link rel="stylesheet" href="style.css" />
   <script src="main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="animated-bg" aria-hidden="true"></div>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <a class="brand" href="index.html">FG<span>.</span></a>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
     <nav class="main-nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <a href="profil.html">Profil</a>
@@ -23,36 +32,44 @@
   </header>
 
   <main class="page-shell reveal">
-    <section class="section-heading">
+    <section class="section-heading" data-reveal>
       <p class="eyebrow">Stack technique</p>
       <h1>Les outils que j'utilise vraiment.</h1>
-      <p>Survole une carte pour afficher l'explication. Le texte est scrollable, histoire d'éviter le grand classique : le contenu qui déborde comme un formulaire codé un vendredi soir.</p>
+      <p>
+        Recherche une techno ou survole une carte pour afficher l'explication. L'objectif : montrer une stack claire, pas balancer une soupe de logos comme si LinkedIn avait gagné.
+      </p>
     </section>
 
-    <section class="stack-grid" aria-label="Compétences techniques">
-      <article class="skill-card"><h2>TypeScript</h2><p>Je l'utilise pour fiabiliser le JavaScript, rendre les contrats de données plus explicites et limiter les erreurs bêtes qui apparaissent quand un projet grossit.</p></article>
-      <article class="skill-card"><h2>Node.js</h2><p>Mon environnement principal côté backend. Je m'en sers pour construire des API, gérer la logique métier, structurer les services et connecter proprement l'application à la base de données.</p></article>
-      <article class="skill-card"><h2>Express</h2><p>Framework simple et efficace pour créer des routes, middlewares, contrôleurs et API REST. Je l'utilise avec une structure claire pour éviter le fichier serveur de 900 lignes, cette punition divine.</p></article>
-      <article class="skill-card"><h2>Sequelize</h2><p>ORM que j'utilise pour structurer les modèles, sécuriser les interactions avec la base, gérer les associations et éviter les requêtes SQL bricolées à la main quand ce n'est pas nécessaire.</p></article>
-      <article class="skill-card"><h2>PostgreSQL</h2><p>Base relationnelle solide pour les projets nécessitant cohérence, transactions et structure sérieuse des données. Je l'associe souvent à Sequelize et Docker.</p></article>
-      <article class="skill-card"><h2>MariaDB</h2><p>Je l'utilise pour des projets web classiques ou internes, notamment quand l'environnement attend une base compatible MySQL avec une configuration simple.</p></article>
-      <article class="skill-card"><h2>HTML</h2><p>Base de toute interface web propre. Je l'utilise avec une attention particulière à la sémantique, l'accessibilité et la structure.</p></article>
-      <article class="skill-card"><h2>CSS</h2><p>Je m'en sers pour produire des interfaces modernes, responsive et animées sans transformer le projet en carnaval illisible.</p></article>
-      <article class="skill-card"><h2>JavaScript</h2><p>Indispensable pour l'interactivité côté client. Je l'utilise surtout quand le besoin ne justifie pas une surcouche inutile.</p></article>
-      <article class="skill-card"><h2>EJS</h2><p>Moteur de templates utile pour générer des vues côté serveur avec Node.js, notamment sur des sites simples, rapides et maintenables.</p></article>
-      <article class="skill-card"><h2>Bootstrap</h2><p>Pratique pour accélérer la mise en page, prototyper vite et garder une base responsive cohérente quand le projet n'exige pas un design entièrement custom.</p></article>
-      <article class="skill-card"><h2>PHP</h2><p>Je l'utilise principalement dans le contexte CMS, notamment WordPress et PrestaShop, pour comprendre, adapter ou maintenir des fonctionnalités existantes.</p></article>
-      <article class="skill-card"><h2>WordPress</h2><p>CMS utile pour des sites vitrines, contenus éditoriaux et projets clients où l'autonomie de gestion est importante.</p></article>
-      <article class="skill-card"><h2>PrestaShop</h2><p>Solution e-commerce que j'aborde côté intégration, personnalisation, compréhension métier et architecture boutique.</p></article>
-      <article class="skill-card"><h2>C# / WPF</h2><p>Stack desktop pour créer des applications Windows structurées, avec séparation interface/logique et composants adaptés aux besoins métier.</p></article>
-      <article class="skill-card"><h2>C++ / Qt</h2><p>Pour les applications natives performantes, avec interfaces desktop et connexion à des bases comme PostgreSQL.</p></article>
-      <article class="skill-card"><h2>Docker</h2><p>Je l'utilise pour isoler les environnements, stabiliser les dépendances et rendre les projets plus simples à déployer ou reprendre.</p></article>
-      <article class="skill-card"><h2>Git</h2><p>Indispensable pour versionner proprement, travailler en branches, sécuriser les évolutions et garder un historique exploitable.</p></article>
-      <article class="skill-card"><h2>Linux</h2><p>Base solide pour le serveur, les environnements de développement, les permissions, le shell et la compréhension de ce qui tourne vraiment sous le capot.</p></article>
-      <article class="skill-card"><h2>Figma</h2><p>Je l'utilise pour maquetter, clarifier les parcours utilisateurs et éviter de coder une interface sans vision, sport national beaucoup trop répandu.</p></article>
-      <article class="skill-card"><h2>UML / MCD / MLD</h2><p>Outils de conception pour modéliser avant de coder, poser les relations et éviter de découvrir l'architecture au milieu du développement.</p></article>
-      <article class="skill-card"><h2>Sécurité</h2><p>Approche défensive : validation des entrées, gestion des erreurs, contrôle d'accès, hygiène des dépendances et attention portée aux risques OWASP.</p></article>
-      <article class="skill-card"><h2>Tests logiciel</h2><p>Grâce à mes certifications ISTQB, je raisonne aussi en stratégie de test, cas de test, critères d'acceptation, anomalies et qualité livrable.</p></article>
+    <div class="stack-toolbar" data-reveal>
+      <label class="search-label" for="stack-search">Rechercher une compétence</label>
+      <input id="stack-search" class="stack-search" type="search" placeholder="Ex : TypeScript, Docker, sécurité..." autocomplete="off" />
+      <p class="search-feedback" data-search-feedback></p>
+    </div>
+
+    <section class="stack-grid" aria-label="Compétences techniques" aria-live="polite">
+      <article class="skill-card" data-skill-card data-reveal><h2>TypeScript</h2><p>Je l'utilise pour fiabiliser le JavaScript, rendre les contrats de données plus explicites et limiter les erreurs bêtes qui apparaissent quand un projet grossit.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Node.js</h2><p>Mon environnement principal côté backend. Je m'en sers pour construire des API, gérer la logique métier, structurer les services et connecter proprement l'application à la base de données.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Express</h2><p>Framework simple et efficace pour créer des routes, middlewares, contrôleurs et API REST. Je l'utilise avec une structure claire pour éviter le fichier serveur de 900 lignes.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Sequelize</h2><p>ORM que j'utilise pour structurer les modèles, sécuriser les interactions avec la base, gérer les associations et éviter les requêtes SQL bricolées à la main quand ce n'est pas nécessaire.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>PostgreSQL</h2><p>Base relationnelle solide pour les projets nécessitant cohérence, transactions et structure sérieuse des données. Je l'associe souvent à Sequelize et Docker.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>MariaDB</h2><p>Je l'utilise pour des projets web classiques ou internes, notamment quand l'environnement attend une base compatible MySQL avec une configuration simple.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>HTML</h2><p>Base de toute interface web propre. Je l'utilise avec une attention particulière à la sémantique, l'accessibilité et la structure.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>CSS</h2><p>Je m'en sers pour produire des interfaces modernes, responsive et animées sans transformer le projet en carnaval illisible.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>JavaScript</h2><p>Indispensable pour l'interactivité côté client. Je l'utilise surtout quand le besoin ne justifie pas une surcouche inutile.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>EJS</h2><p>Moteur de templates utile pour générer des vues côté serveur avec Node.js, notamment sur des sites simples, rapides et maintenables.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Bootstrap</h2><p>Pratique pour accélérer la mise en page, prototyper vite et garder une base responsive cohérente quand le projet n'exige pas un design entièrement custom.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>PHP</h2><p>Je l'utilise principalement dans le contexte CMS, notamment WordPress et PrestaShop, pour comprendre, adapter ou maintenir des fonctionnalités existantes.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>WordPress</h2><p>CMS utile pour des sites vitrines, contenus éditoriaux et projets clients où l'autonomie de gestion est importante.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>PrestaShop</h2><p>Solution e-commerce que j'aborde côté intégration, personnalisation, compréhension métier et architecture boutique.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>C# / WPF</h2><p>Stack desktop pour créer des applications Windows structurées, avec séparation interface/logique et composants adaptés aux besoins métier.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>C++ / Qt</h2><p>Pour les applications natives performantes, avec interfaces desktop et connexion à des bases comme PostgreSQL.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Docker</h2><p>Je l'utilise pour isoler les environnements, stabiliser les dépendances et rendre les projets plus simples à déployer ou reprendre.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Git</h2><p>Indispensable pour versionner proprement, travailler en branches, sécuriser les évolutions et garder un historique exploitable.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Linux</h2><p>Base solide pour le serveur, les environnements de développement, les permissions, le shell et la compréhension de ce qui tourne vraiment sous le capot.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Figma</h2><p>Je l'utilise pour maquetter, clarifier les parcours utilisateurs et éviter de coder une interface sans vision.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>UML / MCD / MLD</h2><p>Outils de conception pour modéliser avant de coder, poser les relations et éviter de découvrir l'architecture au milieu du développement.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Sécurité</h2><p>Approche défensive : validation des entrées, gestion des erreurs, contrôle d'accès, hygiène des dépendances et attention portée aux risques OWASP.</p></article>
+      <article class="skill-card" data-skill-card data-reveal><h2>Tests logiciel</h2><p>Grâce à mes certifications ISTQB, je raisonne aussi en stratégie de test, cas de test, critères d'acceptation, anomalies et qualité livrable.</p></article>
     </section>
   </main>
 </body>
