@@ -325,7 +325,7 @@ p {
 .glass-card,
 .skill-card {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(18px) scale(0.98);
   transition:
     opacity 520ms ease var(--reveal-delay, 0ms),
     transform 520ms ease var(--reveal-delay, 0ms),
@@ -337,7 +337,7 @@ p {
 .glass-card.is-visible,
 .skill-card.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .tilt-card {
@@ -527,13 +527,19 @@ p {
 
 .project-card {
   min-height: 320px;
-  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   border-color: rgba(109, 232, 255, 0.45);
   background: linear-gradient(145deg, rgba(109, 232, 255, 0.14), rgba(255, 255, 255, 0.05));
+  box-shadow: 0 24px 60px rgba(109, 232, 255, 0.18);
 }
 
 .project-card[hidden],
