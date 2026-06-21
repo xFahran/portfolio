@@ -31,62 +31,127 @@
     </nav>
   </header>
 
-  <main class="page-shell hero-layout reveal">
-    <section class="hero-content" data-reveal>
-      <p class="eyebrow typewriter" aria-label="Spécialités">
-        <span id="typewriter-text"></span><span class="cursor" aria-hidden="true">|</span>
-      </p>
+  <main class="page-shell home-shell reveal">
+    <section class="hero-layout">
+      <section class="hero-content" data-reveal>
+        <p class="eyebrow typewriter" aria-label="Spécialités">
+          <span id="typewriter-text"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
 
-      <h1>Je conçois des applications propres, sécurisées et maintenables.</h1>
+        <h1 class="hero-title" data-scramble>Je code, je teste, je sécurise.</h1>
 
-      <p class="hero-text">
-        Backend Node.js / TypeScript, interfaces web, bases de données, tests logiciel, sécurité applicative et conception. Mon objectif : construire des solutions utiles, solides et compréhensibles par les équipes qui devront les maintenir après moi.
-      </p>
+        <p class="hero-text">
+          Backend Node.js / TypeScript, interfaces web, bases de données, tests logiciel, sécurité applicative et conception. Je construis des solutions utiles, solides et assez claires pour rester maintenables après la livraison.
+        </p>
 
-      <div class="hero-actions">
-        <a class="btn primary magnetic" href="projets.html">Voir mes projets</a>
-        <a class="btn ghost magnetic" href="contact.html">Me contacter</a>
-      </div>
+        <div class="hero-actions">
+          <a class="btn primary magnetic" href="projets.html"><span>Voir mes projets</span></a>
+          <a class="btn ghost magnetic" href="formations.html"><span>Mes certifications</span></a>
+        </div>
 
-      <section class="stats-grid" aria-label="Résumé chiffré">
-        <article class="stat-card" data-reveal>
-          <strong data-counter="3">0</strong>
-          <span>certifications ISTQB</span>
-        </article>
+        <section class="cert-strip" aria-label="Certifications ISTQB clés">
+          <article class="cert-pill" data-cert-pulse data-reveal>
+            <span>ISTQB</span>
+            <strong>Foundation Level</strong>
+            <small>Test logiciel</small>
+          </article>
 
-        <article class="stat-card" data-reveal>
-        <strong data-counter="7">0</strong>
-          <span>projets présentés</span>
-        </article>
+          <article class="cert-pill" data-cert-pulse data-reveal>
+            <span>ISTQB</span>
+            <strong>Advanced Level</strong>
+            <small>Stratégie & analyse</small>
+          </article>
 
-        <article class="stat-card" data-reveal>
-          <strong data-counter="7">0</strong>
-          <span>technos principales</span>
-        </article>
+          <article class="cert-pill" data-cert-pulse data-reveal>
+            <span>ISTQB</span>
+            <strong>Agile Tester</strong>
+            <small>Qualité en cycle agile</small>
+          </article>
+        </section>
+
+        <section class="stats-grid" aria-label="Résumé chiffré">
+          <article class="stat-card" data-reveal>
+            <strong data-counter="3">0</strong>
+            <span>certifications ISTQB</span>
+          </article>
+
+          <article class="stat-card" data-reveal>
+            <strong data-counter="7">0</strong>
+            <span>projets présentés</span>
+          </article>
+
+          <article class="stat-card" data-reveal>
+            <strong data-counter="23">0</strong>
+            <span>compétences listées</span>
+          </article>
+        </section>
       </section>
+
+      <aside class="hero-card glass-card tilt-card" aria-label="Résumé professionnel" data-reveal>
+        <div class="status-dot">Disponible pour opportunités</div>
+
+        <div class="hero-card-top">
+          <span>QA-ready</span>
+          <span>Backend-first</span>
+        </div>
+
+        <h2>Fahran Gérondal</h2>
+        <p>Développeur orienté qualité, sécurité, backend et conception applicative.</p>
+
+        <div class="quality-meter" aria-label="Mise en avant certifications ISTQB">
+          <div>
+            <span>Certifications qualité</span>
+            <strong>ISTQB x3</strong>
+          </div>
+          <div class="meter-track" aria-hidden="true"><span></span></div>
+        </div>
+
+        <ul class="quick-list">
+          <li>
+            <strong>Stack forte</strong>
+            <span>Node.js, TypeScript, Express, Sequelize</span>
+          </li>
+          <li>
+            <strong>Applicatif</strong>
+            <span>C#, WPF, C++, Qt Creator</span>
+          </li>
+          <li>
+            <strong>Qualité</strong>
+            <span>Cas de test, anomalies, critères d'acceptation</span>
+          </li>
+        </ul>
+      </aside>
     </section>
 
-    <aside class="hero-card glass-card tilt-card" aria-label="Résumé professionnel" data-reveal>
-      <div class="status-dot">Disponible pour opportunités</div>
+    <section class="cert-showcase" aria-label="Certifications ISTQB" data-reveal>
+      <div class="section-heading compact">
+        <p class="eyebrow">Triple certification ISTQB</p>
+        <h2>Un profil dev qui parle aussi test, risque et qualité livrable.</h2>
+      </div>
 
-      <h2>Fahran Gérondal</h2>
-      <p>Développeur orienté qualité, sécurité, backend et conception applicative.</p>
+      <div class="certification-grid">
+        <article class="cert-card" data-cert-card data-reveal>
+          <span class="cert-index">01</span>
+          <p class="card-kicker">ISTQB</p>
+          <h3>Foundation Level</h3>
+          <p>Fondamentaux du test logiciel, conception de cas, niveaux de test et gestion des anomalies.</p>
+        </article>
 
-      <ul class="quick-list">
-        <li>
-          <strong>Stack forte</strong>
-          <span>Node.js, TypeScript, Express, Sequelize</span>
-        </li>
-        <li>
-          <strong>Applicatif</strong>
-          <span>C#, WPF, C++, Qt Creator</span>
-        </li>
-        <li>
-          <strong>Qualité</strong>
-          <span>3 certifications ISTQB</span>
-        </li>
-      </ul>
-    </aside>
+        <article class="cert-card" data-cert-card data-reveal>
+          <span class="cert-index">02</span>
+          <p class="card-kicker">ISTQB</p>
+          <h3>Advanced Level</h3>
+          <p>Analyse plus poussée, stratégie de test, couverture, risques produit et qualité mesurable.</p>
+        </article>
+
+        <article class="cert-card" data-cert-card data-reveal>
+          <span class="cert-index">03</span>
+          <p class="card-kicker">ISTQB</p>
+          <h3>Foundation Level Agile Tester</h3>
+          <p>Tests en contexte agile, feedback rapide, collaboration et critères d'acceptation solides.</p>
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>
