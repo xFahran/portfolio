@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTiltCards(prefersReducedMotion);
   initMagneticButtons(prefersReducedMotion);
   initCardSpotlight();
+  initInteractiveCardGroups(prefersReducedMotion);
+  initHoverSparks(prefersReducedMotion);
   initCertificatePulse(prefersReducedMotion);
   initPageTransitions(prefersReducedMotion);
 });
@@ -631,7 +633,7 @@ function initCopyButtons() {
 }
 
 function initTiltCards(prefersReducedMotion) {
-  const cards = document.querySelectorAll('.tilt-card');
+  const cards = document.querySelectorAll('.tilt-card, .skill-card');
 
   if (prefersReducedMotion || cards.length === 0) {
     return;
@@ -700,6 +702,105 @@ function initCardSpotlight() {
 
       card.style.setProperty('--mouse-x', `${x}%`);
       card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+}
+
+function initInteractiveCardGroups(prefersReducedMotion) {
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  const groups = [
+    { container: '.stack-grid', item: '.skill-card' },
+    { container: '.project-grid', item: '.project-card' }
+  ];
+
+  groups.forEach(group => {
+    const container = document.querySelector(group.container);
+
+    if (!(container instanceof HTMLElement)) {
+      return;
+    }
+
+    const cards = [...container.querySelectorAll(group.item)].filter(card => card instanceof HTMLElement);
+
+    if (cards.length === 0) {
+      return;
+    }
+
+    const clearActiveCard = () => {
+      cards.forEach(card => {
+        card.classList.remove('is-focused', 'is-muted');
+      });
+    };
+
+    const setActiveCard = activeCard => {
+      cards.forEach(card => {
+        const isActive = card === activeCard;
+
+        card.classList.toggle('is-focused', isActive);
+        card.classList.toggle('is-muted', !isActive && !card.hidden);
+      });
+    };
+
+    cards.forEach(card => {
+      card.tabIndex = 0;
+
+      card.addEventListener('pointerenter', () => {
+        setActiveCard(card);
+      });
+
+      card.addEventListener('focus', () => {
+        setActiveCard(card);
+      });
+
+      card.addEventListener('blur', () => {
+        window.setTimeout(() => {
+          if (!container.contains(document.activeElement)) {
+            clearActiveCard();
+          }
+        }, 0);
+      });
+    });
+
+    container.addEventListener('pointerleave', clearActiveCard);
+  });
+}
+
+function initHoverSparks(prefersReducedMotion) {
+  const canUsePointer = window.matchMedia('(pointer: fine)').matches;
+  const cards = document.querySelectorAll('.skill-card, .project-card');
+
+  if (prefersReducedMotion || !canUsePointer || cards.length === 0) {
+    return;
+  }
+
+  cards.forEach(card => {
+    if (!(card instanceof HTMLElement)) {
+      return;
+    }
+
+    card.addEventListener('pointerenter', event => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      for (let index = 0; index < 7; index += 1) {
+        const spark = document.createElement('span');
+        const angle = (Math.PI * 2 * index) / 7;
+        const distance = 22 + Math.random() * 26;
+
+        spark.className = 'card-spark';
+        spark.style.left = `${x}px`;
+        spark.style.top = `${y}px`;
+        spark.style.setProperty('--spark-x', `${Math.cos(angle) * distance}px`);
+        spark.style.setProperty('--spark-y', `${Math.sin(angle) * distance}px`);
+        spark.style.setProperty('--spark-delay', `${index * 18}ms`);
+
+        card.append(spark);
+        window.setTimeout(() => spark.remove(), 760);
+      }
     });
   });
 }
