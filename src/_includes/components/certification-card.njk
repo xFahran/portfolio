@@ -1,0 +1,17 @@
+<article class="cert-card{% if featured %} featured{% endif %}" data-cert-card data-reveal>
+  <span class="cert-index">{{ index | formatIndex }}</span>
+  <p class="card-kicker">ISTQB</p>
+  {% if headingLevel == 2 %}
+    <h2>{{ certification.pageTitle }}</h2>
+  {% else %}
+    <h3>{{ certification.pageTitle }}</h3>
+  {% endif %}
+  <p>{{ summary }}</p>
+  {% if showPoints and certification.points.length %}
+    <ul class="cert-points">
+      {% for point in certification.points %}
+        <li>{{ point }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

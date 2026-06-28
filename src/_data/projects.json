@@ -1,0 +1,224 @@
+[
+  {
+    "id": "zegailde",
+    "title": "Zegailde",
+    "type": "Backend web",
+    "scope": "Node / PostgreSQL",
+    "description": "Développement backend du site de Sébastien, avec une logique de contenu évolutif et une architecture pensée pour rester maintenable.",
+    "impact": [
+      "Architecture contenu",
+      "Backend maintenable"
+    ],
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Sequelize",
+      "PostgreSQL",
+      "Docker",
+      "EJS"
+    ],
+    "categories": [
+      "backend",
+      "database"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": true,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "traitement-texte-simplifie",
+    "title": "Traitement de texte simplifié",
+    "type": "Desktop accessibilité",
+    "scope": "WPF / UX",
+    "description": "Application WPF destinée aux personnes éloignées du numérique, avec une interface claire et des fonctionnalités centrées sur l'usage réel.",
+    "impact": [
+      "Interface accessible",
+      "Usage réel"
+    ],
+    "technologies": [
+      "C#",
+      "WPF",
+      "UX simple",
+      "Accessibilité"
+    ],
+    "categories": [
+      "desktop",
+      "accessibilite"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": true,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "maison-medicale",
+    "title": "Maison médicale",
+    "type": "Application métier",
+    "scope": "C++ / Qt",
+    "description": "Projet applicatif en C++ avec Qt Creator et PostgreSQL, orienté gestion de données métier et interface desktop structurée.",
+    "impact": [
+      "Données métier",
+      "Interface structurée"
+    ],
+    "technologies": [
+      "C++",
+      "Qt Creator",
+      "PostgreSQL",
+      "Desktop"
+    ],
+    "categories": [
+      "desktop",
+      "database"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": true,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "cvtheque-greta-grand-hainaut",
+    "title": "CVthèque interne GRETA GRAND HAINAUT",
+    "type": "Outil interne",
+    "scope": "MariaDB / Docker",
+    "description": "Outil de gestion interne permettant de centraliser et consulter des profils, avec une base de données MariaDB et un environnement Docker.",
+    "impact": [
+      "Centralisation",
+      "Environnement isolé"
+    ],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "MariaDB",
+      "Docker"
+    ],
+    "categories": [
+      "backend",
+      "database"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": false,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "api-authentification-securisee",
+    "title": "API d'authentification sécurisée",
+    "type": "API sécurisée",
+    "scope": "JWT / OWASP",
+    "description": "Développement d'une API Node.js dédiée à l'authentification et la gestion des utilisateurs, en utilisant JWT et une validation poussée des entrées pour respecter les bonnes pratiques OWASP.",
+    "impact": [
+      "Validation poussée",
+      "Contrôle d'accès"
+    ],
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "JWT",
+      "Sécurité"
+    ],
+    "categories": [
+      "backend"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": false,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "supervision-logs-temps-reel",
+    "title": "Supervision de logs en temps réel",
+    "type": "Monitoring & logs",
+    "scope": "Temps réel",
+    "description": "Plateforme de collecte et d'analyse de logs pour des applications distribuées, avec agrégation en temps réel, tableaux de bord et alertes afin de détecter rapidement les anomalies.",
+    "impact": [
+      "Détection anomalies",
+      "Tableaux de bord"
+    ],
+    "technologies": [
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Grafana"
+    ],
+    "categories": [
+      "backend",
+      "database"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": false,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  },
+  {
+    "id": "migration-base-donnees",
+    "title": "Outil de migration de base de données",
+    "type": "Migration de données",
+    "scope": "CLI / Traçabilité",
+    "description": "Création d'un outil CLI en TypeScript permettant de migrer des schémas et jeux de données entre PostgreSQL et MariaDB en vérifiant la cohérence des modèles et en assurant la traçabilité des opérations.",
+    "impact": [
+      "Cohérence modèles",
+      "Traçabilité"
+    ],
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Sequelize",
+      "PostgreSQL",
+      "MariaDB"
+    ],
+    "categories": [
+      "backend",
+      "database"
+    ],
+    "repositoryUrl": null,
+    "demoUrl": null,
+    "image": null,
+    "imageAlt": null,
+    "status": "Présenté",
+    "featured": false,
+    "context": null,
+    "difficulties": [],
+    "technicalDecisions": [],
+    "tests": []
+  }
+]

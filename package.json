@@ -1,0 +1,25 @@
+{
+  "name": "fahran-gerondal-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio professionnel statique de Fahran Gérondal.",
+  "scripts": {
+    "build": "eleventy",
+    "check:links": "node ./scripts/check-internal-links.js",
+    "clean": "node ./scripts/clean.js",
+    "dev": "eleventy --serve --watch",
+    "lint": "eslint src/**/*.js tests/**/*.js *.config.js .eleventy.js",
+    "test": "playwright test",
+    "validate": "npm run lint && npm run build && npm run check:links && npm run test"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "eslint": "^10.6.0"
+  }
+}

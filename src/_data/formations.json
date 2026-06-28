@@ -1,0 +1,27 @@
+[
+  {
+    "type": "Titre professionnel",
+    "title": "Développeur Web et Web Mobile",
+    "description": "Formation orientée conception et développement d'applications web, interfaces, backend, bases de données et déploiement."
+  },
+  {
+    "type": "Titre professionnel",
+    "title": "Concepteur Développeur d'Applications",
+    "description": "Approfondissement de la conception logicielle, de l'architecture applicative, des modèles de données et du développement d'applications plus complètes."
+  },
+  {
+    "type": "Certification ISTQB",
+    "title": "Foundation Level - Test logiciel",
+    "description": "Fondamentaux du test logiciel : processus de test, niveaux de test, techniques de conception et gestion des anomalies."
+  },
+  {
+    "type": "Certification ISTQB",
+    "title": "Advanced Level - Test logiciel",
+    "description": "Approche plus avancée de l'analyse, de la stratégie, de la couverture et de la qualité logicielle."
+  },
+  {
+    "type": "Certification ISTQB",
+    "title": "Foundation Level Agile Tester",
+    "description": "Tests dans un contexte agile : collaboration, feedback rapide, critères d'acceptation et amélioration continue."
+  }
+]

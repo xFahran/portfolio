@@ -1,0 +1,163 @@
+[
+  {
+    "title": "TypeScript",
+    "icon": "TS",
+    "family": "Langage",
+    "tone": "tone-cyan",
+    "description": "Je l'utilise pour fiabiliser le JavaScript, rendre les contrats de données plus explicites et limiter les erreurs bêtes qui apparaissent quand un projet grossit."
+  },
+  {
+    "title": "Node.js",
+    "icon": "N",
+    "family": "Backend",
+    "tone": "tone-green",
+    "description": "Mon environnement principal côté backend. Je m'en sers pour construire des API, gérer la logique métier, structurer les services et connecter proprement l'application à la base de données."
+  },
+  {
+    "title": "Express",
+    "icon": "EX",
+    "family": "API",
+    "tone": "tone-cyan",
+    "description": "Framework simple et efficace pour créer des routes, middlewares, contrôleurs et API REST. Je l'utilise avec une structure claire pour éviter le fichier serveur de 900 lignes."
+  },
+  {
+    "title": "Sequelize",
+    "icon": "SQ",
+    "family": "ORM",
+    "tone": "tone-gold",
+    "description": "ORM que j'utilise pour structurer les modèles, sécuriser les interactions avec la base, gérer les associations et éviter les requêtes SQL bricolées à la main quand ce n'est pas nécessaire."
+  },
+  {
+    "title": "PostgreSQL",
+    "icon": "PG",
+    "family": "Data",
+    "tone": "tone-cyan",
+    "description": "Base relationnelle solide pour les projets nécessitant cohérence, transactions et structure sérieuse des données. Je l'associe souvent à Sequelize et Docker."
+  },
+  {
+    "title": "MariaDB",
+    "icon": "DB",
+    "family": "Data",
+    "tone": "tone-gold",
+    "description": "Je l'utilise pour des projets web classiques ou internes, notamment quand l'environnement attend une base compatible MySQL avec une configuration simple."
+  },
+  {
+    "title": "HTML",
+    "icon": "H",
+    "family": "Front",
+    "tone": "tone-hot",
+    "description": "Base de toute interface web propre. Je l'utilise avec une attention particulière à la sémantique, l'accessibilité et la structure."
+  },
+  {
+    "title": "CSS",
+    "icon": "C",
+    "family": "UI",
+    "tone": "tone-cyan",
+    "description": "Je m'en sers pour produire des interfaces modernes, responsive et animées sans transformer le projet en carnaval illisible."
+  },
+  {
+    "title": "JavaScript",
+    "icon": "JS",
+    "family": "Front",
+    "tone": "tone-gold",
+    "description": "Indispensable pour l'interactivité côté client. Je l'utilise surtout quand le besoin ne justifie pas une surcouche inutile."
+  },
+  {
+    "title": "EJS",
+    "icon": "E",
+    "family": "Template",
+    "tone": "tone-green",
+    "description": "Moteur de templates utile pour générer des vues côté serveur avec Node.js, notamment sur des sites simples, rapides et maintenables."
+  },
+  {
+    "title": "Bootstrap",
+    "icon": "B",
+    "family": "UI kit",
+    "tone": "tone-cyan",
+    "description": "Pratique pour accélérer la mise en page, prototyper vite et garder une base responsive cohérente quand le projet n'exige pas un design entièrement custom."
+  },
+  {
+    "title": "PHP",
+    "icon": "P",
+    "family": "CMS",
+    "tone": "tone-hot",
+    "description": "Je l'utilise principalement dans le contexte CMS, notamment WordPress et PrestaShop, pour comprendre, adapter ou maintenir des fonctionnalités existantes."
+  },
+  {
+    "title": "WordPress",
+    "icon": "W",
+    "family": "CMS",
+    "tone": "tone-green",
+    "description": "CMS utile pour des sites vitrines, contenus éditoriaux et projets clients où l'autonomie de gestion est importante."
+  },
+  {
+    "title": "PrestaShop",
+    "icon": "PS",
+    "family": "Commerce",
+    "tone": "tone-gold",
+    "description": "Solution e-commerce que j'aborde côté intégration, personnalisation, compréhension métier et architecture boutique."
+  },
+  {
+    "title": "C# / WPF",
+    "icon": "C#",
+    "family": "Desktop",
+    "tone": "tone-cyan",
+    "description": "Stack desktop pour créer des applications Windows structurées, avec séparation interface/logique et composants adaptés aux besoins métier."
+  },
+  {
+    "title": "C++ / Qt",
+    "icon": "C++",
+    "family": "Native",
+    "tone": "tone-green",
+    "description": "Pour les applications natives performantes, avec interfaces desktop et connexion à des bases comme PostgreSQL."
+  },
+  {
+    "title": "Docker",
+    "icon": "D",
+    "family": "DevOps",
+    "tone": "tone-cyan",
+    "description": "Je l'utilise pour isoler les environnements, stabiliser les dépendances et rendre les projets plus simples à déployer ou reprendre."
+  },
+  {
+    "title": "Git",
+    "icon": "G",
+    "family": "Versioning",
+    "tone": "tone-hot",
+    "description": "Indispensable pour versionner proprement, travailler en branches, sécuriser les évolutions et garder un historique exploitable."
+  },
+  {
+    "title": "Linux",
+    "icon": "LX",
+    "family": "Système",
+    "tone": "tone-green",
+    "description": "Base solide pour le serveur, les environnements de développement, les permissions, le shell et la compréhension de ce qui tourne vraiment sous le capot."
+  },
+  {
+    "title": "Figma",
+    "icon": "F",
+    "family": "Design",
+    "tone": "tone-hot",
+    "description": "Je l'utilise pour maquetter, clarifier les parcours utilisateurs et éviter de coder une interface sans vision."
+  },
+  {
+    "title": "UML / MCD / MLD",
+    "icon": "U",
+    "family": "Conception",
+    "tone": "tone-gold",
+    "description": "Outils de conception pour modéliser avant de coder, poser les relations et éviter de découvrir l'architecture au milieu du développement."
+  },
+  {
+    "title": "Sécurité",
+    "icon": "S",
+    "family": "Sécurité",
+    "tone": "tone-hot",
+    "description": "Approche défensive : validation des entrées, gestion des erreurs, contrôle d'accès, hygiène des dépendances et attention portée aux risques OWASP."
+  },
+  {
+    "title": "Tests logiciel",
+    "icon": "QA",
+    "family": "ISTQB",
+    "tone": "tone-green",
+    "description": "Grâce à mes certifications ISTQB, je raisonne aussi en stratégie de test, cas de test, critères d'acceptation, anomalies et qualité livrable."
+  }
+]

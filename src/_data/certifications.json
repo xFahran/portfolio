@@ -1,0 +1,44 @@
+[
+  {
+    "id": "istqb-foundation",
+    "title": "Foundation Level",
+    "homeTitle": "Foundation Level",
+    "pageTitle": "Foundation Level",
+    "shortDescription": "Test logiciel",
+    "summary": "Fondamentaux du test logiciel, conception de cas, niveaux de test et gestion des anomalies.",
+    "pageSummary": "Socle du test logiciel : vocabulaire, processus, niveaux de test, techniques de conception et suivi des anomalies.",
+    "points": [
+      "Cas de test structurés",
+      "Analyse des anomalies",
+      "Vision qualité dès la conception"
+    ]
+  },
+  {
+    "id": "istqb-advanced",
+    "title": "Advanced Level",
+    "homeTitle": "Advanced Level",
+    "pageTitle": "Advanced Level",
+    "shortDescription": "Stratégie & analyse",
+    "summary": "Analyse plus poussée, stratégie de test, couverture, risques produit et qualité mesurable.",
+    "pageSummary": "Approche plus stratégique de la qualité : couverture, risques, priorisation, analyse et pilotage des tests.",
+    "points": [
+      "Stratégie de test",
+      "Gestion du risque produit",
+      "Qualité mesurable"
+    ]
+  },
+  {
+    "id": "istqb-agile",
+    "title": "Foundation Level Agile Tester",
+    "homeTitle": "Agile Tester",
+    "pageTitle": "Foundation Level Agile Tester",
+    "shortDescription": "Qualité en cycle agile",
+    "summary": "Tests en contexte agile, feedback rapide, collaboration et critères d'acceptation solides.",
+    "pageSummary": "Test dans les cycles courts : critères d'acceptation, feedback rapide, collaboration et amélioration continue.",
+    "points": [
+      "Culture agile",
+      "Feedback rapide",
+      "Critères d'acceptation clairs"
+    ]
+  }
+]

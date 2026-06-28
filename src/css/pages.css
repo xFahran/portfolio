@@ -1,0 +1,695 @@
+﻿.grid,
+.project-grid,
+.stack-grid,
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-card,
+.project-card,
+.timeline-item,
+.contact-card {
+  padding: 1.55rem;
+}
+
+.card-kicker {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--secondary);
+  font-size: 0.75rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.value-card {
+  position: relative;
+  min-height: 16rem;
+  padding: 1.35rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.value-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 360ms ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(37, 217, 242, 0.45);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.value-card:hover::after {
+  transform: scaleX(1);
+}
+
+.value-card strong {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+  min-height: 2.65rem;
+  padding: 0 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.07);
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active,
+.filter-btn[aria-pressed="true"] {
+  color: var(--text);
+  border-color: rgba(37, 217, 242, 0.48);
+  background: rgba(37, 217, 242, 0.13);
+  transform: translateY(-2px);
+}
+
+.project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  perspective: 1200px;
+}
+
+.project-card {
+  --project-accent: var(--primary);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  isolation: isolate;
+  transition:
+    opacity 220ms ease,
+    filter 220ms ease,
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 360ms ease,
+    background 360ms ease,
+    box-shadow 360ms ease;
+}
+
+.project-card:nth-child(2n) {
+  --project-accent: var(--secondary);
+}
+
+.project-card:nth-child(3n) {
+  --project-accent: var(--accent);
+}
+
+.project-card:nth-child(5n) {
+  --project-accent: var(--hot);
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.1rem 1.1rem;
+  z-index: 0;
+  height: 34%;
+  border-radius: 999px;
+  background: rgba(37, 217, 242, 0.18);
+  filter: blur(34px);
+  opacity: 0;
+  transform: translateY(22px) scale(0.82);
+  pointer-events: none;
+  transition: opacity 360ms ease, transform 360ms ease, background 360ms ease;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.project-card:hover,
+.project-card.is-focused {
+  transform: translateY(-12px) scale(1.018);
+  border-color: color-mix(in srgb, var(--project-accent) 64%, white 10%);
+  background:
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%), color-mix(in srgb, var(--project-accent) 28%, transparent), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  box-shadow: 0 32px 80px color-mix(in srgb, var(--project-accent) 22%, transparent);
+}
+
+.project-card:hover::after,
+.project-card.is-focused::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  background: color-mix(in srgb, var(--project-accent) 28%, transparent);
+}
+
+.project-card.is-muted,
+.skill-card.is-muted {
+  opacity: 0.46;
+  filter: saturate(0.62);
+}
+
+.project-card.is-muted,
+.skill-card.is-muted {
+  transform: scale(0.985);
+}
+
+.project-card[hidden],
+.skill-card[hidden] {
+  display: none;
+}
+
+.project-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.project-type,
+.timeline-item span {
+  display: inline-block;
+  color: var(--project-accent, var(--primary));
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.project-scope,
+.skill-family {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0 0.62rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.project-index {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.65rem;
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.08);
+  font-size: 7rem;
+  font-weight: 950;
+  line-height: 1;
+  transition: color 360ms ease, transform 360ms ease;
+}
+
+.project-card:hover .project-index,
+.project-card.is-focused .project-index {
+  color: color-mix(in srgb, var(--project-accent) 22%, transparent);
+  transform: translate3d(-0.35rem, -0.35rem, 0) scale(1.05);
+}
+
+.project-card h2 {
+  max-width: 92%;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.project-card p {
+  transition: color var(--transition), transform var(--transition);
+}
+
+.project-card:hover h2,
+.project-card.is-focused h2 {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.project-card:hover p,
+.project-card.is-focused p {
+  color: rgba(247, 247, 239, 0.82);
+}
+
+.project-card:focus-visible,
+.skill-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.project-impact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.project-impact span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-height: 2rem;
+  padding: 0 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.82rem;
+  font-weight: 820;
+  transform: translateY(0);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.project-impact span::before {
+  content: "";
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: var(--project-accent);
+  box-shadow: 0 0 14px var(--project-accent);
+}
+
+.project-card:hover .project-impact span,
+.project-card.is-focused .project-impact span {
+  border-color: color-mix(in srgb, var(--project-accent) 42%, white 10%);
+  background: color-mix(in srgb, var(--project-accent) 12%, rgba(255, 255, 255, 0.06));
+  transform: translateY(-2px);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.3rem;
+}
+
+.tags span {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.85rem;
+  font-weight: 780;
+  transform: translateY(0);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition), color var(--transition);
+}
+
+.project-card:hover .tags span,
+.project-card.is-focused .tags span {
+  border-color: color-mix(in srgb, var(--project-accent) 34%, white 8%);
+  background: color-mix(in srgb, var(--project-accent) 10%, rgba(255, 255, 255, 0.08));
+  transform: translateY(-3px);
+}
+
+.project-card:hover .tags span:nth-child(2),
+.project-card.is-focused .tags span:nth-child(2) {
+  transition-delay: 35ms;
+}
+
+.project-card:hover .tags span:nth-child(3),
+.project-card.is-focused .tags span:nth-child(3) {
+  transition-delay: 70ms;
+}
+
+.project-card:hover .tags span:nth-child(4),
+.project-card.is-focused .tags span:nth-child(4) {
+  transition-delay: 105ms;
+}
+
+.project-card:hover .tags span:nth-child(5),
+.project-card.is-focused .tags span:nth-child(5) {
+  transition-delay: 140ms;
+}
+
+.project-card:hover .tags span:nth-child(6),
+.project-card.is-focused .tags span:nth-child(6) {
+  transition-delay: 175ms;
+}
+
+.project-links,
+.project-details {
+  position: relative;
+  z-index: 1;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.45rem;
+  padding: 0 0.78rem;
+  border: 1px solid color-mix(in srgb, var(--project-accent) 42%, white 10%);
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--project-accent) 10%, rgba(255, 255, 255, 0.06));
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+}
+
+.project-details {
+  margin-top: 1rem;
+}
+
+.project-details ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.card-spark {
+  position: absolute;
+  z-index: 3;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  color: var(--skill-accent, var(--project-accent, var(--primary)));
+  background: currentColor;
+  box-shadow: 0 0 16px currentColor;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: sparkBurst 720ms ease-out var(--spark-delay, 0ms) forwards;
+}
+
+.stack-toolbar {
+  margin-bottom: 1.3rem;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--text);
+  font-weight: 850;
+}
+
+.stack-search {
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.stack-search::placeholder {
+  color: rgba(183, 190, 185, 0.72);
+}
+
+.stack-search:focus {
+  border-color: rgba(37, 217, 242, 0.58);
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 0 0 4px rgba(37, 217, 242, 0.09);
+}
+
+.search-feedback {
+  min-height: 1.5rem;
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
+}
+
+.stack-grid {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  perspective: 1200px;
+}
+
+.skill-card {
+  --skill-accent: var(--primary);
+  position: relative;
+  min-height: 220px;
+  padding: 1.18rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%), color-mix(in srgb, var(--skill-accent) 20%, transparent), transparent 34%),
+    rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    opacity 220ms ease,
+    filter 220ms ease,
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 360ms ease,
+    background 360ms ease,
+    box-shadow 360ms ease;
+}
+
+.skill-card.tone-cyan {
+  --skill-accent: var(--primary);
+}
+
+.skill-card.tone-green {
+  --skill-accent: var(--accent);
+}
+
+.skill-card.tone-gold {
+  --skill-accent: var(--secondary);
+}
+
+.skill-card.tone-hot {
+  --skill-accent: var(--hot);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--skill-accent) 24%, transparent), rgba(255, 255, 255, 0.02)),
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(255, 255, 255, 0.035) 14px 15px);
+  transition: opacity 360ms ease;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  right: -2.4rem;
+  bottom: -2.4rem;
+  z-index: 0;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 34%, transparent);
+  border-radius: 999px;
+  opacity: 0.28;
+  transform: scale(0.82);
+  pointer-events: none;
+  transition: opacity 360ms ease, transform 360ms ease, border-color 360ms ease;
+}
+
+.skill-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid color-mix(in srgb, var(--skill-accent) 44%, white 8%);
+  border-radius: 999px;
+  color: #07100d;
+  background: linear-gradient(135deg, var(--skill-accent), rgba(255, 255, 255, 0.78));
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--skill-accent) 22%, transparent);
+  font-size: 0.88rem;
+  font-weight: 950;
+  transition: transform 360ms ease, box-shadow 360ms ease;
+}
+
+.skill-family {
+  color: color-mix(in srgb, var(--skill-accent) 78%, white 10%);
+}
+
+.skill-card h2,
+.skill-card p {
+  position: relative;
+}
+
+.skill-card h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1.35rem;
+  transition: transform var(--transition), color var(--transition);
+}
+
+.skill-card p {
+  max-height: 0;
+  margin: 0;
+  opacity: 0;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  transform: translateY(0.55rem);
+  transition: max-height 320ms ease, opacity 320ms ease, transform 320ms ease, color var(--transition);
+  scrollbar-width: thin;
+}
+
+.skill-card:hover,
+.skill-card:focus-within,
+.skill-card.is-focused {
+  transform: translateY(-10px) scale(1.018);
+  border-color: color-mix(in srgb, var(--skill-accent) 62%, white 10%);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 64px color-mix(in srgb, var(--skill-accent) 22%, transparent);
+}
+
+.skill-card:hover::before,
+.skill-card:focus-within::before,
+.skill-card.is-focused::before {
+  opacity: 1;
+}
+
+.skill-card:hover::after,
+.skill-card:focus-within::after,
+.skill-card.is-focused::after {
+  opacity: 0.82;
+  transform: scale(1.12);
+  border-color: color-mix(in srgb, var(--skill-accent) 64%, transparent);
+}
+
+.skill-card:hover .skill-icon,
+.skill-card:focus-within .skill-icon,
+.skill-card.is-focused .skill-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.08);
+  box-shadow: 0 20px 46px color-mix(in srgb, var(--skill-accent) 34%, transparent);
+}
+
+.skill-card:hover h2,
+.skill-card:focus-within h2,
+.skill-card.is-focused h2 {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.skill-card:hover p,
+.skill-card:focus-within p,
+.skill-card.is-focused p {
+  max-height: 125px;
+  opacity: 1;
+  color: rgba(247, 247, 239, 0.84);
+  transform: translateY(0);
+}
+
+.timeline {
+  position: relative;
+  grid-template-columns: 1fr;
+}
+
+.timeline-item {
+  border-left: 4px solid rgba(37, 217, 242, 0.62);
+}
+
+.timeline-item:hover {
+  border-left-color: var(--secondary);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 420px);
+  align-items: start;
+  gap: 2rem;
+}
+
+.mail-link {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  color: var(--primary);
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.mail-link:hover {
+  text-decoration: underline;
+}
+
+.copy-btn {
+  width: 100%;
+  margin: 0 0 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: var(--z-toast);
+  max-width: min(360px, calc(100% - 2rem));
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  color: var(--text);
+  background: rgba(7, 8, 7, 0.94);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

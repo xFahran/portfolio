@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Projets | Fahran Gérondal
+description: "Projets de Fahran Gérondal : backend web, applications desktop, outils internes, accessibilité numérique et bases de données."
+pageKey: projets
+permalink: /projets.html
+---
+<section class="section-heading" data-reveal>
+  <p class="eyebrow">Réalisations</p>
+  <h1>Des projets concrets, pas une collection de mots-clés décoratifs.</h1>
+  <p>
+    Chaque projet montre une partie différente de mon profil : backend, desktop, base de données, sécurité, conception ou accessibilité numérique.
+  </p>
+</section>
+
+<section class="filter-bar" aria-label="Filtrer les projets" data-reveal>
+  <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">Tous</button>
+  <button class="filter-btn" type="button" data-filter="backend" aria-pressed="false">Backend</button>
+  <button class="filter-btn" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
+  <button class="filter-btn" type="button" data-filter="accessibilite" aria-pressed="false">Accessibilité</button>
+  <button class="filter-btn" type="button" data-filter="database" aria-pressed="false">Base de données</button>
+</section>
+
+<section class="project-grid" aria-live="polite">
+  {% for project in projects %}
+    {% set index = loop.index %}
+    {% include "components/project-card.njk" %}
+  {% endfor %}
+</section>

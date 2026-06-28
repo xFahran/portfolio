@@ -1,0 +1,93 @@
+﻿.reveal {
+  animation: pageReveal 560ms ease both;
+}
+
+@keyframes blinkCursor {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes driftBands {
+  from {
+    transform: translate3d(-2rem, -1rem, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(3rem, 2rem, 0) scale(1.04);
+  }
+}
+
+@keyframes scanSweep {
+  from {
+    transform: translateX(-16%);
+  }
+
+  to {
+    transform: translateX(16%);
+  }
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageWipe {
+  to {
+    transform: translateX(105%);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.28);
+    opacity: 1;
+  }
+}
+
+@keyframes fillMeter {
+  from {
+    transform: scaleX(0.1);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes sparkBurst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--spark-x, 0px)), calc(-50% + var(--spark-y, 0px))) scale(1);
+  }
+}
+

@@ -1,0 +1,32 @@
+[
+  {
+    "key": "home",
+    "label": "Accueil",
+    "url": "/index.html"
+  },
+  {
+    "key": "profil",
+    "label": "Profil",
+    "url": "/profil.html"
+  },
+  {
+    "key": "projets",
+    "label": "Projets",
+    "url": "/projets.html"
+  },
+  {
+    "key": "stack",
+    "label": "Stack",
+    "url": "/stack.html"
+  },
+  {
+    "key": "formations",
+    "label": "Formations",
+    "url": "/formations.html"
+  },
+  {
+    "key": "contact",
+    "label": "Contact",
+    "url": "/contact.html"
+  }
+]

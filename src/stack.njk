@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: Stack | Fahran Gérondal
+description: "Stack technique de Fahran Gérondal : TypeScript, Node.js, Express, Sequelize, PostgreSQL, C#, WPF, C++, Qt, Docker, Git et tests logiciel."
+pageKey: stack
+permalink: /stack.html
+---
+<section class="section-heading" data-reveal>
+  <p class="eyebrow">Stack technique</p>
+  <h1>Les outils que j'utilise vraiment.</h1>
+  <p>
+    Une stack construite pour produire des applications solides : backend clair, bases fiables, interfaces propres, environnements maîtrisés et qualité logicielle en fil rouge.
+  </p>
+</section>
+
+<div class="stack-toolbar" data-reveal>
+  <label class="search-label" for="stack-search">Rechercher une compétence</label>
+  <input id="stack-search" class="stack-search" type="search" placeholder="Ex : TypeScript, Docker, sécurité..." autocomplete="off" />
+  <p class="search-feedback" data-search-feedback></p>
+</div>
+
+<section class="stack-grid" aria-label="Compétences techniques" aria-live="polite">
+  {% for skill in skills %}
+    {% include "components/skill-card.njk" %}
+  {% endfor %}
+</section>

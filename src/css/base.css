@@ -1,0 +1,167 @@
+﻿
+* {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(135deg, rgba(37, 217, 242, 0.08), transparent 34%),
+    linear-gradient(225deg, rgba(255, 184, 77, 0.07), transparent 38%),
+    linear-gradient(180deg, #090a0a 0%, #111417 48%, #080907 100%);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.036) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.036) 1px, transparent 1px);
+  background-size: 68px 68px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), transparent 88%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.018) 0,
+    rgba(255, 255, 255, 0.018) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+  opacity: 0.42;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+button:disabled,
+input:disabled,
+button[aria-disabled="true"],
+a[aria-disabled="true"] {
+  cursor: not-allowed;
+  filter: saturate(0.45);
+  opacity: 0.58;
+}
+
+input:invalid {
+  border-color: var(--hot);
+  box-shadow: 0 0 0 4px rgba(255, 92, 122, 0.12);
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-progress);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--hot));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-background);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  inset: -22%;
+  background:
+    linear-gradient(112deg, transparent 8%, rgba(37, 217, 242, 0.10) 20%, transparent 31%),
+    linear-gradient(68deg, transparent 42%, rgba(255, 184, 77, 0.10) 53%, transparent 63%),
+    linear-gradient(148deg, transparent 62%, rgba(85, 242, 154, 0.09) 72%, transparent 82%);
+  transform: translate3d(0, 0, 0);
+  animation: driftBands 18s ease-in-out infinite alternate;
+}
+
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent),
+    radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.2), transparent 48%);
+  opacity: 0.35;
+  animation: scanSweep 9s linear infinite;
+}
+
+.motion-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-canvas);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.cursor-spotlight {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: var(--z-spotlight);
+  width: 34rem;
+  height: 34rem;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(37, 217, 242, 0.12), rgba(255, 184, 77, 0.07) 34%, transparent 66%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 180ms ease;
+}
+
+body.has-pointer .cursor-spotlight {
+  opacity: 1;
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-transition);
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  transform: translateX(-105%);
+}
+
+body.is-leaving .page-transition {
+  animation: pageWipe 260ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+

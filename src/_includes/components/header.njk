@@ -1,0 +1,18 @@
+<header class="site-header" data-header>
+  <a class="brand" href="{{ '/index.html' | url }}" aria-label="Retour à l'accueil">{{ site.shortName }}<span>.</span></a>
+
+  <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-navigation">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+
+  <nav id="main-navigation" class="main-nav" aria-label="Navigation principale">
+    {% for item in navigation %}
+      <a
+        href="{{ item.url | url }}"
+        {% if pageKey == item.key %}class="active" aria-current="page"{% endif %}
+      >{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+</header>

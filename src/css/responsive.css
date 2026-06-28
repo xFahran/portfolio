@@ -1,0 +1,200 @@
+﻿@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+
+  [data-reveal],
+  .glass-card,
+  .skill-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion-canvas,
+  .cursor-spotlight,
+  .card-spark {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  h1 {
+    font-size: 3.9rem;
+  }
+
+  .hero-title {
+    font-size: 4.35rem;
+  }
+
+  .section-heading.compact h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    border-radius: 24px;
+    align-items: flex-start;
+  }
+
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.8rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    background: rgba(7, 8, 7, 0.94);
+    backdrop-filter: blur(18px);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .hero-layout,
+  .two-cols,
+  .project-grid,
+  .contact-layout,
+  .section-heading.compact,
+  .certification-grid,
+  .certification-wall {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-layout {
+    min-height: auto;
+  }
+
+  .hero-card {
+    transform: none;
+  }
+
+  h1 {
+    font-size: 3.65rem;
+  }
+
+  .hero-title {
+    font-size: 3.65rem;
+  }
+
+  h2,
+  .section-heading.compact h2 {
+    font-size: 1.85rem;
+  }
+
+  .stats-grid,
+  .cert-summary,
+  .value-grid,
+  .cert-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card p {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-card,
+  .skill-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - var(--space-page-x-sm), var(--max-width));
+    padding-top: 3.4rem;
+  }
+
+  .site-header {
+    width: min(100% - var(--space-page-x-sm), var(--max-width));
+  }
+
+  h1 {
+    font-size: 2.72rem;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title {
+    font-size: 2.72rem;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-text,
+  .section-heading p {
+    font-size: 1rem;
+  }
+
+  .hero-actions,
+  .filter-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .filter-btn {
+    width: 100%;
+  }
+
+  .content-card,
+  .project-card,
+  .timeline-item,
+  .contact-card,
+  .hero-card,
+  .cert-card {
+    padding: 1.15rem;
+  }
+
+  .cert-card,
+  .cert-card.featured,
+  .value-card {
+    min-height: auto;
+  }
+
+  .mail-link {
+    font-size: 1.08rem;
+  }
+
+  .toast {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  h1,
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  h2,
+  .section-heading.compact h2 {
+    font-size: 1.62rem;
+  }
+}

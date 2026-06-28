@@ -1,0 +1,30 @@
+{
+  "home": [
+    {
+      "value": 3,
+      "label": "certifications ISTQB"
+    },
+    {
+      "value": 7,
+      "label": "projets présentés"
+    },
+    {
+      "value": 23,
+      "label": "compétences listées"
+    }
+  ],
+  "formations": [
+    {
+      "value": 2,
+      "label": "titres professionnels"
+    },
+    {
+      "value": 3,
+      "label": "certifications ISTQB"
+    },
+    {
+      "value": 5,
+      "label": "blocs formation qualité/dev"
+    }
+  ]
+}

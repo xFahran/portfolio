@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Contact | Fahran Gérondal
+description: Contacter Fahran Gérondal pour un projet, une mission, un poste ou une collaboration professionnelle.
+pageKey: contact
+mainClass: page-shell contact-layout reveal
+permalink: /contact.html
+toast: true
+---
+<section class="section-heading" data-reveal>
+  <p class="eyebrow">Contact</p>
+  <h1>Discutons projet, poste ou collaboration.</h1>
+  <p>
+    Pour un entretien, une mission ou un échange professionnel, le plus simple reste le mail. Révolutionnaire, visiblement.
+  </p>
+</section>
+
+<section class="glass-card contact-card tilt-card" data-reveal>
+  <span class="card-kicker">Email direct</span>
+  <h2>Email</h2>
+
+  <a class="mail-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+
+  <button class="btn primary copy-btn" type="button" data-copy="{{ site.email }}">
+    Copier l'email
+  </button>
+
+  <p>
+    Développeur web, mobile et applicatif, disponible pour échanger autour de projets backend, applicatifs, qualité logicielle, sécurité ou conception.
+  </p>
+</section>

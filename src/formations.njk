@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Formations & certifications | Fahran Gérondal
+description: "Formations et certifications de Fahran Gérondal : développement web, conception d'applications et certifications ISTQB."
+pageKey: formations
+permalink: /formations.html
+---
+<section class="section-heading" data-reveal>
+  <p class="eyebrow">Diplômes & certifications</p>
+  <h1>Une base développement, renforcée par la qualité logicielle.</h1>
+  <p>
+    Deux titres professionnels côté développement, trois certifications ISTQB côté test. Donc oui, je sais coder, mais aussi vérifier que ce qui est codé ne part pas en feu dès qu'un utilisateur clique au mauvais endroit.
+  </p>
+</section>
+
+<section class="certification-wall" aria-label="Détail des certifications ISTQB">
+  {% for certification in certifications %}
+    {% set index = loop.index %}
+    {% set summary = certification.pageSummary %}
+    {% set headingLevel = 2 %}
+    {% set featured = true %}
+    {% set showPoints = true %}
+    {% include "components/certification-card.njk" %}
+  {% endfor %}
+</section>
+
+<section class="cert-summary" aria-label="Résumé formations">
+  {% for stat in statistics.formations %}
+    {% include "components/stat-card.njk" %}
+  {% endfor %}
+</section>
+
+<section class="timeline">
+  {% for formation in formations %}
+    <article class="timeline-item glass-card" data-reveal>
+      <span>{{ formation.type }}</span>
+      <h2>{{ formation.title }}</h2>
+      <p>{{ formation.description }}</p>
+    </article>
+  {% endfor %}
+</section>
