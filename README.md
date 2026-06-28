@@ -1,4 +1,5 @@
 # Portfolio Fahran Gérondal
+Portfolio en ligne : https://xfahran.github.io/portfolio/
 
 Portfolio professionnel statique en HTML, CSS et JavaScript vanilla, généré avec Eleventy pour éviter la duplication des pages tout en restant compatible GitHub Pages.
 
